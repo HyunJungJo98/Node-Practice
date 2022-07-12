@@ -27,7 +27,11 @@ mongoose
 // 루트 디렉토리에 hello world를 출력
 app.get('/', (req, res) => res.send('Hello World! 안녕하세요!!'));
 
-app.post('api/users/register', (req, res) => {
+app.get('/api/hello', (req, res) => {
+  res.send('안녕하세요 ~');
+});
+
+app.post('/api/users/register', (req, res) => {
   // 회원가입할 때 필요한 정보들을 클라이언트에서 가져오면 데이터베이스에 넣어주기
   const user = new User(req.body);
 
